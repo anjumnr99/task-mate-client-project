@@ -8,6 +8,10 @@ import Blog from "../Pages/Blog/Blog";
 import Contact from "../Pages/Contact/Contact";
 import Feature from "../Pages/Feature/Feature";
 import Pricing from "../Pages/Pricing/Pricing";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import AddTask from "../Pages/Dashboard/AddTask/AddTask";
+import Task from "../Pages/Dashboard/Task";
+import UpdateTask from "../Pages/Dashboard/UpdateTask/UpdateTask";
 
 
 const MainRouter = createBrowserRouter([
@@ -48,6 +52,25 @@ const MainRouter = createBrowserRouter([
             element: <Pricing></Pricing>
         },
       ]
+    },
+    {
+        path:'dashboard',
+        element: <Dashboard></Dashboard>,
+        children:[
+            {
+                path:'add-task',
+                element: <AddTask></AddTask>
+            },
+            {
+                path:'my-task',
+                element: <Task></Task>
+            },
+            {
+                path:'update-task/:id',
+                element: <UpdateTask></UpdateTask>,
+                loader: ({params})=>fetch(`http://localhost:5000/tasks/${params.id}`)
+            },
+        ]
     }
 
   ]);

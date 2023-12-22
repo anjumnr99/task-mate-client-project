@@ -99,9 +99,9 @@ const Login = () => {
                 });
                 Toast.fire({
                     icon: "success",
-                    title: 'Logged Successfully!'
+                    title: 'Login Successfully!'
                 });
-                navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/dashboard')
             })
             .catch(err => {
                 // toast.error(err.message)
