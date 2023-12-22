@@ -49,7 +49,7 @@ const Register = () => {
                     icon: "success",
                     title: 'Logged Successfully!'
                 });
-                navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/dashboard')
             })
             .catch(err => {
                 // toast.error(err.message)
@@ -144,7 +144,7 @@ const Register = () => {
                             icon: "success",
                             title: "Profile successfully created!"
                         });
-                        navigate('/');
+                        navigate('/dashboard');
 
 
                         // toast.success('Profile successfully created!')
@@ -208,7 +208,7 @@ const Register = () => {
                     icon: "success",
                     title: "Signed in successfully"
                 });
-                navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/dashboard')
             })
             .catch(err => {
 
@@ -242,7 +242,7 @@ const Register = () => {
                     </div>
                 </div>
 
-                <div className="md:w-[50%] md:rounded-r-2xl bg-purple-200 p-4 shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">
+                <div className="md:w-[50%] md:rounded-r-2xl bg-purple-200 p-4 shadow sm:p-8 ">
                     <h2 className="my-4 text-3xl text-blue-700 font-semibold text-center">Create a New Account</h2>
                     <p className="text-sm text-center text-blue-600 dark:text-gray-400">Already have an account? Please
                         <Link to='/login' className="focus:underline font-semibold text-blue-900 hover:underline"> Login here</Link>

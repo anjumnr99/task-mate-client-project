@@ -9,7 +9,7 @@ const LandingPage = () => {
                 <h1 className='  text-2xl md:text-3xl lg:text-6xl font-semibold'>Revolutionize Your <br /> Workflow with <br /> <span className=' text-purple-800 '>Task Mate!</span></h1>
                 <p className=' font-semibold md:text-lg lg:text-xl'>Imagine a world where tasks are seamlessly managed, collaboration is effortless, and productivity soars.</p>
 
-                <Link to='/login'>
+                <Link to='/dashboard/my-task'>
                     <button className='btn mt-2 btn-outline hover:bg-purple-500 hover:border-purple-600 border-2 border-purple-600 md:text-base lg:text-xl '>Let's Explore</button>
                 </Link>
             </div>

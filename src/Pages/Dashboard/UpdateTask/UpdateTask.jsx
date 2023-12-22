@@ -12,7 +12,6 @@ const UpdateTask = () => {
     const task = useLoaderData();
     console.log(task);
     const { _id, task_priority, task_title, task_deadlines, task_description } = task || {};
-    const { register, handleSubmit, reset } = useForm();
     const { user } = useContext(AuthContext);
     const [startDate, setStartDate] = useState(new Date(task_deadlines));
     const axiosPublic = useAxiosPublic();
@@ -42,7 +41,7 @@ const UpdateTask = () => {
         axiosPublic.put(`/task/update/${_id}`, updated)
             .then(result => {
                 if (result?.data.acknowledged) {
-                    reset();
+                    
                     const Toast = Swal.mixin({
                         toast: true,
                         position: "top-end",

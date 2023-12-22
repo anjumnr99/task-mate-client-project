@@ -27,7 +27,7 @@ const AddTask = () => {
             user_email: user.email
         }
 
-        console.log(typeof(startDate.toDateString()));
+        
         axiosPublic.post('/tasks', newTask)
         .then(result=>{
             if (result.data?.insertedId) {

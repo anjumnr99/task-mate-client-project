@@ -12,67 +12,70 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import AddTask from "../Pages/Dashboard/AddTask/AddTask";
 import Task from "../Pages/Dashboard/Task";
 import UpdateTask from "../Pages/Dashboard/UpdateTask/UpdateTask";
+import PrivateRoute from "./PrivateRoute";
 
 
 const MainRouter = createBrowserRouter([
     {
-      path: "/",
-      element: <MainLayout></MainLayout>,
-      children:[
-        {
-            path:'/',
-            element: <LandingPage></LandingPage>
-        },
-        {
-            path:'register',
-            element: <Register></Register>
-        },
-        {
-            path:'login',
-            element: <Login></Login>
-        },
-        {
-            path:'about',
-            element: <About></About>
-        },
-        {
-            path:'blog',
-            element: <Blog></Blog>
-        },
-        {
-            path:'contact',
-            element: <Contact></Contact>
-        },
-        {
-            path:'feature',
-            element: <Feature></Feature>
-        },
-        {
-            path:'pricing',
-            element: <Pricing></Pricing>
-        },
-      ]
+        path: "/",
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: '/',
+                element: <LandingPage></LandingPage>
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
+                path: 'about',
+                element: <About></About>
+            },
+            {
+                path: 'blog',
+                element: <Blog></Blog>
+            },
+            {
+                path: 'contact',
+                element: <Contact></Contact>
+            },
+            {
+                path: 'feature',
+                element: <Feature></Feature>
+            },
+            {
+                path: 'pricing',
+                element: <Pricing></Pricing>
+            },
+        ]
     },
     {
-        path:'dashboard',
+        path: 'dashboard',
         element: <Dashboard></Dashboard>,
-        children:[
+        children: [
             {
-                path:'add-task',
+                path: 'add-task',
                 element: <AddTask></AddTask>
             },
             {
-                path:'my-task',
-                element: <Task></Task>
+                path: 'my-task',
+                element: <PrivateRoute>
+                    <Task></Task>
+                </PrivateRoute>
             },
             {
-                path:'update-task/:id',
+                path: 'update-task/:id',
                 element: <UpdateTask></UpdateTask>,
-                loader: ({params})=>fetch(`http://localhost:5000/tasks/${params.id}`)
+                loader: ({ params }) => fetch(`https://task-mate-server-project-kgph3rc7k-anjus-projects-6a90d7b7.vercel.app/tasks/${params.id}`)
             },
         ]
     }
 
-  ]);
+]);
 
 export default MainRouter;

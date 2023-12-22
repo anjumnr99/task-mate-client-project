@@ -151,7 +151,7 @@ const Login = () => {
                     icon: "success",
                     title: "Signed in successfully"
                 });
-                navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/dashboard')
             })
             .catch(err => {
                 // toast.error(err.message)
@@ -187,15 +187,15 @@ const Login = () => {
                 </div>
 
 
-                <div className="md:w-[50%] md:rounded-r-2xl bg-purple-200 p-4 shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">
+                <div className="md:w-[50%] md:rounded-r-2xl bg-purple-200 p-4 shadow sm:p-8 ">
                     <h2 className="mb-3 text-3xl text-purple-700 font-semibold text-center">Login to your account</h2>
-                    <p className="text-sm text-center text-purple-600 dark:text-gray-400">Dont have account?
+                    <p className="text-sm text-center text-purple-600 ">Dont have account?
                         <Link to='/register' className="focus:underline font-semibold text-purple-900 hover:underline"> Sign up here</Link>
                     </p>
                     <div className="flex items-center w-full">
-                        <hr className="w-full border-purple-700  dark:text-gray-400" />
-                        <p className="flex-shrink-0 px-2 text-purple-800 font-semibold dark:text-gray-400">Login with</p>
-                        <hr className="w-full border-purple-700 dark:text-gray-400" />
+                        <hr className="w-full border-purple-700  " />
+                        <p className="flex-shrink-0 px-2 text-purple-800 font-semibold ">Login with</p>
+                        <hr className="w-full border-purple-700 " />
                     </div>
                     <div className=" flex items-center justify-center w-full p-4 space-x-4 -mt-3  border-purple-700 border-l border-r border-b  focus:ri focus:ri dark:border-gray-400 focus:ri">
                         <button onClick={handleGoogleLogin} type="button" className=" ">
@@ -209,9 +209,9 @@ const Login = () => {
 
                     </div>
                     <div className="flex items-center w-full my-4">
-                        <hr className="w-full border-purple-800  dark:text-gray-400" />
-                        <p className="px-3 dark:text-gray-400">OR</p>
-                        <hr className="w-full border-purple-800 dark:text-gray-400" />
+                        <hr className="w-full border-purple-800  " />
+                        <p className="px-3 ">OR</p>
+                        <hr className="w-full border-purple-800 " />
                     </div>
                     <form onSubmit={handleLoginWithEmailAndPassword} className="space-y-8">
                         <div className="space-y-4">
@@ -223,7 +223,7 @@ const Login = () => {
                             <div className="space-y-2">
                                 <div className="flex justify-between">
                                     <label htmlFor="password" className="text-sm">Password</label>
-                                    <Link rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">Forgot password?</Link>
+                                    <Link rel="noopener noreferrer" href="#" className="text-xs hover:underline ">Forgot password?</Link>
                                 </div>
                                 <input type="password" name="password" id="password" placeholder="*****" required className="w-full px-3 py-2 border rounded-md dark:border-gray-700 focus:outline-none focus:border-purple-500 focus:ring-purple-500 focus:ring-1 border-purple-800 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                             </div>

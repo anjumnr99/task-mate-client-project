@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { IoHome } from "react-icons/io5";
 import { RiArchiveDrawerLine } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa";
 import { FiPlusCircle } from "react-icons/fi";
@@ -59,7 +60,7 @@ const Dashboard = () => {
             <div className="drawer-content p-4">
                 {/* Page content here */}
                 <label htmlFor="my-drawer-2" className=" drawer-button lg:hidden">
-                <RiArchiveDrawerLine className="text-4xl text-purple-700" />
+                    <RiArchiveDrawerLine className="text-4xl text-purple-700" />
                 </label>
 
                 <Outlet></Outlet>
@@ -77,11 +78,11 @@ const Dashboard = () => {
                                 <div className=" text-base font-semibold">{user?.displayName}</div>
                                 <FaChevronDown />
                             </div>
-                            <ul tabIndex={0} className="menu dropdown-content z-[10] p-2 shadow bg-base-100 rounded-box w-52 mt-4 ">
+                            <ul tabIndex={0} className="menu dropdown-content z-[10] p-2 shadow bg-base-100 rounded-box w-max mt-4 ">
                                 <li><div>{user?.displayName}</div></li>
                                 <li><div className=" font-medium truncate">{user?.email}</div></li>
                                 <li>
-                                    <button onClick={handleLogOut} className="block w-full px-4 py-2 text-md font-semibold text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"> Logout
+                                    <button onClick={handleLogOut} className="block w-full px-4 py-2 text-md font-semibold text-gray-600 hover:bg-gray-100 "> Logout
                                     </button>
                                 </li>
                             </ul>
@@ -94,7 +95,14 @@ const Dashboard = () => {
                     </li>
                     <li>
                         <Link to='/dashboard/my-task'>
-                          <button className="text-2xl">Dashboard</button>
+                            <button className="text-2xl">Dashboard</button>
+                        </Link>
+                    </li>
+                    <div className=" divider"></div>
+                    <li>
+                        <Link to='/' className="flex item-center justify-start">
+                            <IoHome className="text-3xl text-purple-700" />
+                            <p className="text-xl font-semibold">Home</p>
                         </Link>
                     </li>
                 </ul>
